@@ -3,6 +3,7 @@ import CreateContact from "../Components/CreateContact";
 import EditContact from "../Components/EditContact";
 import InputContact from "../Components/InputContact";
 import { ContactInfo } from "../model";
+import ViewContact from "../Components/ViewContact";
 
 
 const Contact: React.FC = () => {
@@ -13,7 +14,8 @@ const Contact: React.FC = () => {
   // In below three screen has been rendering 
   // first Create contact screen with required props which includes create contact button and contact list
   // second Input Contact screen which have form with input for first name , last name and status
-  //  third Edit Contact screen which have form with current contact info which needs to be editted
+  // third Edit Contact screen which have form with current contact info which needs to be editted
+  // fourth View Contact detail 
   return (
     <>
       <h1 className="text-3xl font-bold tc-p">Contacts</h1>
@@ -41,6 +43,11 @@ const Contact: React.FC = () => {
           setContactInfo={setContactInfo}
           contacts={contacts}
           setContacts={setContacts}
+        />
+        <ViewContact
+        activeScreen={activeScreen}
+        setActiveScreen={setActiveScreen}
+        contactInfo={contactInfo}
         />
       </div>
     </>
