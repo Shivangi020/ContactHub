@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
 
   return (
     <>
-      <h1 className="text-3xl font-bold">Contacts</h1>
+      <h1 className="text-3xl font-bold tc-p">Contacts</h1>
       <div className=" h-5/6 flex flex-col justify-center item-center">
         <CreateContact
           activeScreen={activeScreen}

@@ -80,3 +80,12 @@ body{
 .form input{
   box-shadow: inset 0 0 2px black;
 }
+
+.boxes{
+  margin-top: 7px;
+  height: 95%;
+}
+
+.tc-p{
+  color: var(--dark);
+}
