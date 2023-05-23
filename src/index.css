@@ -89,3 +89,12 @@ body{
 .tc-p{
   color: var(--dark);
 }
+
+@media screen and (max-width: 160px){
+  .btn{
+    width: 120px;
+  
+  }
+};
+
+

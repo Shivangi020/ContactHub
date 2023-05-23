@@ -47,29 +47,29 @@ const EditContact: React.FC<Props> = ({ activeScreen, setActiveScreen ,contactIn
       <div className="add-btn flex flex-col justify-center item-center screen mt-10">
         <h1 className="text-center tc-p text-3xl font-semibold">Edit Contact</h1>
       <form className="form" onSubmit={editFormAction}>
-        <div className=" mt-10">
-          <label className="text-xl font-bold">First name : </label>
+        <div className="mt-10 flex sm:flex-row flex-col justify-center md:w-4/5 items-center">
+          <label className="md:text-xl font-bold text-sm">First name : </label>
           <input
             type="text"
             placeholder="first name"
-            className="w-72 h-10 p-2 ml-2"
+            className="md:w-72 h-10 p-2 ml-2 w-4/5"
             value={first_name}
             onChange={(e)=>setContactInfo({...contactInfo,first_name:e.target.value})}
           ></input>
         </div>
-        <div className="mt-10">
-          <label className="text-xl font-bold">Last name : </label>
+        <div className="mt-10 flex sm:flex-row flex-col justify-center items-center md:w-4/5">
+          <label className="md:text-xl font-bold text-sm">Last name : </label>
           <input
             type="text"
             placeholder="last name"
-            className="w-72 h-10 p-2 ml-2"
+            className="md:w-72 h-10 p-2 ml-2 w-4/5"
             value={last_name}
             onChange={(e)=>setContactInfo({...contactInfo,last_name:e.target.value})}
           ></input>
         </div>
         <div className="mt-10 flex flex-col">
           <span className="text-xl font-bold">Status : </span>
-          <label className="text-xl">
+          <label className="sm:text-xl">
             <input
               type="radio"
               name="status"
@@ -80,7 +80,7 @@ const EditContact: React.FC<Props> = ({ activeScreen, setActiveScreen ,contactIn
             />
             Active
           </label>
-          <label className="text-xl">
+          <label className="sm:text-xl">
             <input
               type="radio"
               name="status"

@@ -5,7 +5,7 @@ import DraggableMarker from "../Components/Mapbox";
 const Chart: React.FC = () => {
   return (
     <>
-      <h1 className="text-3xl font-bold tc-p">Charts and Map</h1>
+      <h1 className="text-xl font-bold tc-p sm:text-3xl">Charts and Map</h1>
       <div className="flex flex-col w-full  boxes">
         <h4 className="font-semibold">Covid Cases Fluctuation </h4>
         <Chartbox />

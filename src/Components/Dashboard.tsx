@@ -31,7 +31,7 @@ const Dashboard: React.FC = () => {
   return (
     <main className="main-d flex">
       <div className="sidebar p-8">
-        <h1 className="text-3xl font-bold">Contact Hub</h1>
+        <h1 className="sm:text-3xl font-bold text-xl ">Contact Hub</h1>
         <ul className="btn-d flex flex-col mt-8">
           {nav.map((nav, index) => {
             const { name, isActive, to, icon } = nav;
@@ -39,14 +39,14 @@ const Dashboard: React.FC = () => {
               <li
                 className={` ${
                   isActive
-                    ? "active-btn py-3 pl-2 flex text-xl font-semibold transition-all"
-                    : "py-3 pl-2 flex text-xl font-semibold transition-all"
+                    ? "active-btn py-2 pr-3 flex text-sm font-semibold transition-all sm:text-xl"
+                    : "py-2 pl-2 flex text-sm font-semibold transition-all sm:text-xl"
                 }`}
                 key={index}
                 onClick={() => activeBtnHandler(name)}
               >
-                <Link to={to} className="w-full flex h-full">
-                  <span className="mr-3">{icon}</span>
+                <Link to={to} className="w-full flex items-center h-full">
+                  <span className="sm:mr-3 ">{icon}</span>
                   {name}
                 </Link>
               </li>
@@ -54,7 +54,7 @@ const Dashboard: React.FC = () => {
           })}
         </ul>
       </div>
-      <div className="dashbd p-8 overflow-y-scroll">
+      <div className="dashbd sm:p-8 overflow-y-scroll p-2 pt-8">
         <Outlet />
       </div>
     </main>

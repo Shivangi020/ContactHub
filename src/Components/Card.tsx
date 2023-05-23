@@ -14,7 +14,7 @@ const Card: React.FC<Props> = ({ contactInfo,deleteContact,editContact,viewDetai
   const { first_name, last_name, status,id } = contactInfo;
   
   return (
-    <div className="flex flex-col justify-center items-center h-36 w-48 bg-white rounded-md">
+    <div className="flex flex-col justify-center items-center h-36 w-48 bg-white rounded-md  sm:w-40">
       <FaUserCircle className="text-5xl " />
       <p className='text-sm text-center'>
         {first_name} {last_name}
