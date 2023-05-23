@@ -1,13 +1,82 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+:root{
+  --dark:#6E62E5;
+  --backgrnd:#EDEEF7;
+  --light:#d3cefb;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--backgrnd);
+  margin: 0 auto;
+}
+#root{
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-d{
+  width: 95vw ;
+  height: 95vh;
+  background-color: #fff;
+  border-radius: 20px;
+;
+}
+
+.sidebar{
+  flex: 1;
+  border-right: 3px solid #ECECEC;
+}
+
+.sidebar h1{
+  color: var(--dark);
+}
+
+.dashbd{
+  flex: 4;
+}
+
+.active-btn{
+  background-color: var(--dark);
+  color: #fff;
+  border-radius: 10px;
+}
+
+.add-btn{
+  flex: 1;
+}
+
+.contact-list{
+  flex: 5;
+  border-radius: 20px;
+  background-color: var(--backgrnd);
+}
+
+.btn{
+  width: 160px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: var(--dark);
+  color: #fff;
+}
+
+.screen{
+  background-color: var(--backgrnd);
+  border-radius: 20px
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form input{
+  box-shadow: inset 0 0 2px black;
 }
