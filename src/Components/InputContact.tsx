@@ -14,6 +14,9 @@ interface Props {
 
 const InputContact: React.FC<Props> = ({ activeScreen, setActiveScreen ,contactInfo,setContactInfo,contacts,setContacts}) => {
   
+   
+  const {id,first_name,last_name,status} = contactInfo
+  // On submission of this form a new contactInfo will be added in contact list and then again inputs will default value
   const formAction =(e: React.FormEvent<EventTarget>) :void=>{
     e.preventDefault()
     if(contactInfo.first_name.length >0 && contactInfo.last_name.length >0){
@@ -22,6 +25,7 @@ const InputContact: React.FC<Props> = ({ activeScreen, setActiveScreen ,contactI
     }else{
       alert('Please Fill the form')
     }
+    setContactInfo({id:0,first_name:'',last_name:'',status:'active'})
   }
 
   return (
@@ -36,6 +40,7 @@ const InputContact: React.FC<Props> = ({ activeScreen, setActiveScreen ,contactI
         <div className=" mt-10">
           <label className="text-xl font-bold">First name : </label>
           <input
+          value={first_name}
             type="text"
             placeholder="first name"
             className="w-72 h-10 p-2 ml-2"
@@ -45,6 +50,7 @@ const InputContact: React.FC<Props> = ({ activeScreen, setActiveScreen ,contactI
         <div className="mt-10">
           <label className="text-xl font-bold">Last name : </label>
           <input
+          value={last_name}
             type="text"
             placeholder="last name"
             className="w-72 h-10 p-2 ml-2"

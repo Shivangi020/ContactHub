@@ -1,6 +1,8 @@
 import React from 'react'
 import {ImCross} from 'react-icons/im'
 
+
+// Empty List component will render if contact list is empty
 const EmptyList:React.FC=()=> {
   return (
     <div className='flex justify-center items-center'>

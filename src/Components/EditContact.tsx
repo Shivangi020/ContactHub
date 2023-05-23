@@ -14,22 +14,26 @@ const EditContact: React.FC<Props> = ({ activeScreen, setActiveScreen ,contactIn
 
   const {id,first_name,last_name,status} = contactInfo
   
-  const updateTodo = (id:Number, contactInfo:ContactInfo) => {
+  // This function takes contact list and matches the id with contact which needs to be edit and updates it 
+  const updateContact = (id:Number, contactInfo:ContactInfo) => {
       const newList = contacts.map(item =>
         item.id === id ? { ...contactInfo, first_name,last_name,status } : item
       )
     setContacts(newList)
   };
 
+
+  // This is form action function which will execute updateContact function on submission
   const editFormAction = (e:React.FormEvent<EventTarget>)=>{
     e.preventDefault()
     if(contactInfo.first_name.length >0 && contactInfo.last_name.length >0){
       console.log(contactInfo)
-      updateTodo(id,contactInfo)
+      updateContact(id,contactInfo)
       setActiveScreen('ContactList')
     }else{
       alert('Please Fill the form')
     }
+    setContactInfo({id:0,first_name:'',last_name:'',status:'active'})
   }
 
   return (

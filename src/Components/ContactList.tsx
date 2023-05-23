@@ -14,12 +14,13 @@ const ContactList :React.FC<Props>=({contacts,setContacts,setActiveScreen,contac
 
 //  Function for deleting contacts
   const deleteContact = (id:Number) =>{
-    const newList= contacts.filter((y)=>{
-        return   y.id !== id
+    const newList= contacts.filter((item)=>{
+        return   item.id !== id
     })
     setContacts(newList)
   }
 
+  // function to render edit contact screen and setting the input contact info with current values
   const editContact= (id:Number , first_name:string , last_name:string ,status:string)=>{
     setActiveScreen('EditContact') 
     console.log(first_name,last_name,status,id)

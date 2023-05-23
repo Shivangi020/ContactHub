@@ -20,13 +20,14 @@ const navsData: NavProp[] = [
 const Dashboard: React.FC = () => {
   const [nav, setNav] = useState<NavProp[]>(navsData);
 
+  // Action for Nav links of dashboard sidebar so that whichever page is active corresponding links should have different background colour
   const activeBtnHandler = (tag: string) => {
     const navOptions = navsData.map((item) => {
       return { ...item, isActive: item.name === tag };
     });
     setNav(navOptions);
   };
-
+ 
   return (
     <main className="main-d flex">
       <div className="sidebar p-8">
@@ -44,7 +45,7 @@ const Dashboard: React.FC = () => {
                 key={index}
                 onClick={() => activeBtnHandler(name)}
               >
-                <Link to={to} className="w-full flex">
+                <Link to={to} className="w-full flex h-full">
                   <span className="mr-3">{icon}</span>
                   {name}
                 </Link>

@@ -4,7 +4,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 const Chartbox:React.FC =()=> {
     const [chartData, setChartData] = useState<{ date: string; cases: unknown }[]>([]);
-
+     
+    // Fetching data from api 'https://disease.sh/v3/covid-19/historical/all?lastdays=all'
     const { isLoading, error, data } = useQuery({
         queryKey: ['repoData'],
         queryFn: () =>
@@ -13,7 +14,7 @@ const Chartbox:React.FC =()=> {
           ),
       })
 
-      // 
+      // changing data object in array data structure  so that points can be mapped on line graph
       useEffect(() => {
         if (data) {
           const casesData = data.cases;
@@ -24,8 +25,10 @@ const Chartbox:React.FC =()=> {
           setChartData(chartDataArr);
         }
       }, [data]);
+
       if (isLoading) return <h1 className='text-3xl font-bold tc-p'>Loading...</h1>
       if (error) return <h1 className='text-3xl font-bold tc-p'>An error has occurred</h1>
+      
     return (
     <div className='basis-9/12 '>
        <ResponsiveContainer width="100%" height="100%">

@@ -19,6 +19,7 @@ interface CountryData {
 const DraggableMarker: React.FC = () => {
   const [positionCenter, setPositions] = useState<CountryData[]>([]);
 
+  // Fetching data from api 'https://disease.sh/v3/covid-19/countries'
   const { isLoading, error, data } = useQuery({
     queryKey: ['mapData'],
     queryFn: () =>
@@ -26,6 +27,8 @@ const DraggableMarker: React.FC = () => {
         (res) => res.json(),
       ),
   })
+
+  
   useEffect(() => {
     if (data) {
       setPositions(data);
@@ -41,6 +44,7 @@ const DraggableMarker: React.FC = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+      {/* Mapping all the position that is lat and long on map and popup the contents such as country name , death etc */}
       {positionCenter.map((pos, index) => {
         const { countryInfo, country, deaths, active, recovered } = pos;
         const { lat, long } = countryInfo;

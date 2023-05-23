@@ -10,6 +10,10 @@ const Contact: React.FC = () => {
   const [contactInfo ,setContactInfo] = useState<ContactInfo>({id:0,first_name:'',last_name:'',status:'active'});
   const [contacts ,setContacts] = useState<ContactInfo[]>([])
 
+  // In below three screen has been rendering 
+  // first Create contact screen with required props which includes create contact button and contact list
+  // second Input Contact screen which have form with input for first name , last name and status
+  //  third Edit Contact screen which have form with current contact info which needs to be editted
   return (
     <>
       <h1 className="text-3xl font-bold tc-p">Contacts</h1>
