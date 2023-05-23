@@ -2,6 +2,7 @@ import React, { useState,useEffect } from "react";
 import { Marker, Popup, MapContainer, TileLayer } from "react-leaflet";
 import {useQuery} from '@tanstack/react-query'
 
+
 let markerPosition :[number,number]
 
 interface CountryData {

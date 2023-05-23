@@ -19,6 +19,8 @@ const Contact: React.FC = () => {
           setActiveScreen={setActiveScreen}
           contacts={contacts}
           setContacts={setContacts}
+          contactInfo ={contactInfo}
+          setContactInfo={setContactInfo}
         />
         <InputContact
           activeScreen={activeScreen}
@@ -31,6 +33,10 @@ const Contact: React.FC = () => {
         <EditContact
           activeScreen={activeScreen}
           setActiveScreen={setActiveScreen}
+          contactInfo={contactInfo} 
+          setContactInfo={setContactInfo}
+          contacts={contacts}
+          setContacts={setContacts}
         />
       </div>
     </>

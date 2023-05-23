@@ -12,6 +12,8 @@ const Chartbox:React.FC =()=> {
             (res) => res.json(),
           ),
       })
+
+      // 
       useEffect(() => {
         if (data) {
           const casesData = data.cases;
@@ -25,7 +27,7 @@ const Chartbox:React.FC =()=> {
       if (isLoading) return <h1 className='text-3xl font-bold tc-p'>Loading...</h1>
       if (error) return <h1 className='text-3xl font-bold tc-p'>An error has occurred</h1>
     return (
-    <div className='basis-2/4 '>
+    <div className='basis-9/12 '>
        <ResponsiveContainer width="100%" height="100%">
        <LineChart width={800} height={400} data={chartData}>
         <CartesianGrid strokeDasharray="3 3" />
