@@ -1,14 +1,6 @@
 import React from "react";
 import Chartbox from "../Components/Chartbox";
-import { MapContainer, TileLayer } from "react-leaflet";
 import DraggableMarker from "../Components/Mapbox";
-
-
-
-const center = {
-  lat: 51.505,
-  lng: -0.09,
-}
 
 
 const Chart: React.FC = () => {
@@ -19,13 +11,9 @@ const Chart: React.FC = () => {
         <h4 className="font-semibold">Covid Cases Fluctuation </h4>
         <Chartbox />
         <h4 className="font-semibold">Map</h4>
-        <MapContainer center={center} zoom={13} scrollWheelZoom={false}>
-          <TileLayer
-            attribution='<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <DraggableMarker />
-        </MapContainer>
+        <div className="border-2 border-black w-full h-full overflow-x-scroll">
+         <DraggableMarker/>
+        </div>
       </div>
     </>
   );

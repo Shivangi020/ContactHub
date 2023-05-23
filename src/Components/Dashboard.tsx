@@ -10,17 +10,22 @@ type NavProp = {
 };
 const navsData: NavProp[] = [
   { name: "Contact", isActive: true, to: "/", icon: <BsTelephoneFill /> },
-  {name: "Charts & Map",isActive: false,to: "/charts",icon: <BsFillMapFill />},
+  {
+    name: "Charts & Map",
+    isActive: false,
+    to: "/charts",
+    icon: <BsFillMapFill />,
+  },
 ];
 const Dashboard: React.FC = () => {
-  const [nav ,setNav] = useState<NavProp[]>(navsData)
-   
-  const activeBtnHandler=(tag:string)=>{
-    const navOptions = navsData.map((item)=>{
-      return {...item , isActive:item.name === tag}
-    })
-    setNav(navOptions)
-  }
+  const [nav, setNav] = useState<NavProp[]>(navsData);
+
+  const activeBtnHandler = (tag: string) => {
+    const navOptions = navsData.map((item) => {
+      return { ...item, isActive: item.name === tag };
+    });
+    setNav(navOptions);
+  };
 
   return (
     <main className="main-d flex">
@@ -37,16 +42,18 @@ const Dashboard: React.FC = () => {
                     : "py-3 pl-2 flex text-xl font-semibold transition-all"
                 }`}
                 key={index}
-                onClick={()=>activeBtnHandler(name)}
+                onClick={() => activeBtnHandler(name)}
               >
-                
-                <Link to={to} className="w-full flex"><span className="mr-3">{icon}</span>{name}</Link>
+                <Link to={to} className="w-full flex">
+                  <span className="mr-3">{icon}</span>
+                  {name}
+                </Link>
               </li>
             );
           })}
         </ul>
       </div>
-      <div className="dashbd p-8 overflow-hidden">
+      <div className="dashbd p-8 overflow-y-scroll">
         <Outlet />
       </div>
     </main>
